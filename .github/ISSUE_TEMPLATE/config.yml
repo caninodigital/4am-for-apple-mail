@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: License or purchase help
+    url: mailto:4am@caninodigital.com
+    about: For anything involving your license key or payment, email instead of opening a public issue.
