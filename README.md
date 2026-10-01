@@ -46,15 +46,34 @@ An app that listens for keys has to earn trust, so here is exactly what 4AM does
 
 | Access | Why | What it doesn't do |
 |---|---|---|
-| **Accessibility** (required) | To see which part of Mail is selected, notice shortcut keys while Mail is in front, and press Mail's own menu commands, such as Archive, for you. | It doesn't read the content of your emails. It looks at what kind of element is selected (for example "the message list"), not what's in it. |
+| **Accessibility** (required) | To see which part of Mail is selected, notice shortcut keys while Mail is in front, and press Mail's own menu commands, such as Archive, for you. | It doesn't read the content of your emails. It looks at what kind of element is selected (for example "the message list"), not what's in it. It does read the names of Mail's menu items, which is how it finds commands such as Archive. |
 | **Input Monitoring** (only if macOS asks) | On some setups macOS wants this as well before an app can notice key presses. 4AM asks only if it's needed on your Mac. | Same as above: keys are checked against your shortcut list and forgotten. |
 | **Internet** (only when you activate) | To confirm a license key with Lemon Squeezy, sending the key and your Mac's name. | No analytics, no tracking, no update checks, and nothing about your mail. |
-| **Keychain** | To store your license key and the date your trial started. | It doesn't read any of your other Keychain items. |
+| **Keychain** | To store your license key and the date your trial started. The trial date is kept there on purpose so that deleting and reinstalling the app doesn't restart the trial; it stays until you remove it (see below). | It doesn't read any of your other Keychain items. |
 | **Open at login** (optional) | So 4AM starts with your Mac. It asks once; you can change it any time. | |
 
-4AM also keeps two small files in your Library folder: your shortcut settings (`Application Support/4AM/keymap.json`) and, only if you turn on debug logging, a log that records which shortcut ran and the kind of element selected, never keys or text.
+### What Canino Digital can see
 
-To remove 4AM completely, quit it, delete it from Applications, and switch it off under System Settings › Privacy & Security.
+- **When you buy:** the name and email address you give at checkout, through Lemon Squeezy, which processes the payment. Card details go to Lemon Squeezy and are never seen by Canino Digital.
+- **When you activate:** the name of the Mac, such as "Sam's MacBook Air", listed against your license key so you can tell your activations apart.
+- **Nothing else.** 4AM has no analytics and sends no usage data, so there is no record of how, when or whether you use it.
+
+### Files and debugging tools
+
+4AM keeps these on your Mac:
+
+- `~/Library/Application Support/4AM/keymap.json`: your shortcut settings.
+- `~/Library/Preferences/com.caninodigital.4AM.plist`: whether shortcuts are switched on, and similar settings.
+- `~/Library/Logs/4AM/debug.log`: written only when you use the debugging tools.
+
+The debugging tools appear when you hold Option and click the menu bar icon. They exist to diagnose problems after a macOS update. They record which shortcut ran and the kind of element selected in Mail, never the keys you press or any text. One tool, "Log Menu Structure", writes the names of Mail's menus to that log, which can include your mailbox names. The log stays on your Mac and is never sent anywhere; you choose whether to share it when reporting a problem.
+
+### Removing 4AM completely
+
+1. Quit 4AM and delete it from Applications.
+2. Remove it under System Settings › Privacy & Security (Accessibility, and Input Monitoring if listed) and under General › Login Items.
+3. Delete the three files listed above.
+4. In the Keychain Access app, search for `com.caninodigital.4AM.license` and delete the entries. These hold your license key and trial date.
 
 ## Pricing
 
