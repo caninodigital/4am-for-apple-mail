@@ -1,6 +1,6 @@
 # Release notes
 
-## 1.0.2 — 2 October 2026
+## 1.0.2 — 1 October 2026
 
 - The menu bar panel's header now reads "Shortcuts 4 Apple Mail", spelling out where the name comes from.
 
