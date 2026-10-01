@@ -42,7 +42,19 @@ An app that listens for keys has to earn trust, so here is exactly what 4AM does
 - **Typing is never touched.** Shortcuts fire only when a message or the message list is selected. Writing an email, searching and Spotlight work as normal.
 - **One network connection, when you ask.** 4AM contacts the internet only when you activate or deactivate a license key, sending that key and your Mac's name. Nothing about your mail is ever sent.
 
-Accessibility permission is what lets 4AM see which part of Mail is selected and press Mail's own menu commands, such as Archive, for you.
+## What 4AM needs access to
+
+| Access | Why | What it doesn't do |
+|---|---|---|
+| **Accessibility** (required) | To see which part of Mail is selected, notice shortcut keys while Mail is in front, and press Mail's own menu commands, such as Archive, for you. | It doesn't read the content of your emails. It looks at what kind of element is selected (for example "the message list"), not what's in it. |
+| **Input Monitoring** (only if macOS asks) | On some setups macOS wants this as well before an app can notice key presses. 4AM asks only if it's needed on your Mac. | Same as above: keys are checked against your shortcut list and forgotten. |
+| **Internet** (only when you activate) | To confirm a license key with Lemon Squeezy, sending the key and your Mac's name. | No analytics, no tracking, no update checks, and nothing about your mail. |
+| **Keychain** | To store your license key and the date your trial started. | It doesn't read any of your other Keychain items. |
+| **Open at login** (optional) | So 4AM starts with your Mac. It asks once; you can change it any time. | |
+
+4AM also keeps two small files in your Library folder: your shortcut settings (`Application Support/4AM/keymap.json`) and, only if you turn on debug logging, a log that records which shortcut ran and the kind of element selected, never keys or text.
+
+To remove 4AM completely, quit it, delete it from Applications, and switch it off under System Settings › Privacy & Security.
 
 ## Pricing
 
