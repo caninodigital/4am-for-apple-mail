@@ -40,6 +40,7 @@ An app that listens for keys has to earn trust, so here is exactly what 4AM does
 - **It never records what you type.** Each key is checked against your shortcut list and forgotten. Nothing is logged or stored.
 - **It only looks at the keyboard while Mail is in front.** Switch to another app and it stops entirely.
 - **Typing is never touched.** Shortcuts fire only when a message or the message list is selected. Writing an email, searching and Spotlight work as normal.
+- **What happens while you write an email.** 4AM still sees each key press in a compose window, because that is the only way it can notice `⌘↩` to send. It compares the key with your shortcut list, finds no match and passes it to Mail unchanged. It keeps no copy: nothing you type is saved to memory, to disk or to a log, and nothing is sent anywhere.
 - **One network connection, when you ask.** 4AM contacts the internet only when you activate or deactivate a license key, sending that key and your Mac's name. Nothing about your mail is ever sent.
 
 ## What 4AM needs access to
