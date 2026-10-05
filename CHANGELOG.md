@@ -1,5 +1,13 @@
 # Release notes
 
+## 1.1.1 — 6 October 2026
+
+- The "Start from" menu in the shortcut editor no longer has text drawn over it, and looks like a normal Mac menu.
+- The menu now has an Accessibility switch showing whether the permission is granted, with links straight to the Accessibility and Login Items settings.
+- The question-mark button sits in the Shortcuts heading, and its card now also explains the green and grey icons.
+- Simpler heading, "Shortcuts for Apple Mail", with the status shown beside the Shortcuts switch.
+- More space between sections, and the menu bar icon is less faded when Mail isn't in front.
+
 ## 1.1.0 — 5 October 2026
 
 - **Shortcut sets.** Choose Gmail, Outlook for Mac, Outlook for Windows, Custom or Off from the menu. Outlook for Windows puts Ctrl shortcuts on the Mac's Control key, including `⌃C`, `⌃V` and `⌃X` to copy, paste and cut.
