@@ -2,15 +2,27 @@
 
 # 4AM for Apple Mail
 
-**Gmail-style keyboard shortcuts for Apple Mail on the Mac.** Press `E` to archive, `J` and `K` to move through your inbox, `R` to reply, and `⌘↩` to send.
+**Keyboard shortcuts for Apple Mail on the Mac: Gmail, Outlook for Mac, Outlook for Windows, or your own.** Press `E` to archive, `J` and `K` to move through your inbox, `R` to reply, and `⌘↩` to send.
 
-4AM is a small menu bar app that gives Apple Mail the single-key shortcuts Gmail users miss. Apple Mail's own shortcuts all need a modifier key, and the old Mail plug-ins that added Gmail keys no longer work on current macOS. 4AM is a separate app that needs no plug-in.
+4AM is a small menu bar app that gives Apple Mail the shortcuts you already know. Pick Gmail's single keys, Outlook for Mac's shortcuts, or Outlook for Windows' Ctrl shortcuts (on the Mac's Control key), or set your own key for any action. Apple Mail's own shortcuts all need a modifier key, and the old Mail plug-ins that added Gmail keys no longer work on current macOS. 4AM is a separate app that needs no plug-in.
 
 **[Download the free trial](https://caninodigital.com/4am/4AM.dmg)** · **[Product page](https://caninodigital.com/4am/)** · **[Buy a license (USD$9.99)](https://caninodigital.lemonsqueezy.com/checkout/buy/dadbaa88-5737-48e0-9b0e-56587e397f38)**
 
 <p align="center"><img src="assets/panel.png" width="400" alt="The 4AM menu bar panel, showing switches and the list of single-key shortcuts"></p>
 
-## Shortcuts
+## Shortcut sets
+
+Choose a set from the 4AM menu and switch any time.
+
+| Set | What you get | Full list |
+|---|---|---|
+| **Gmail** | Single keys: `E` archive, `J` / `K` next and previous, `R` reply, `#` delete | [Gmail shortcuts for Apple Mail](https://caninodigital.com/4am/gmail-shortcuts-for-apple-mail/) |
+| **Outlook for Mac** | The keys Mail does differently: `⌃E` archive, `⌘J` forward, `⌘T` mark as read, `⌃1` flag | [Outlook for Mac shortcuts for Apple Mail](https://caninodigital.com/4am/outlook-for-mac-shortcuts-for-apple-mail/) |
+| **Outlook for Windows** | Ctrl shortcuts on the Control key: `⌃R` reply, `⌃F` forward, `⌃N` new, `⌃↩` send, `⌃C` / `⌃V` / `⌃X` copy, paste and cut | [Outlook for Windows shortcuts for Apple Mail](https://caninodigital.com/4am/outlook-for-windows-shortcuts-for-apple-mail/) |
+| **Custom** | Your own keys. Start from any set, click an action in the 4AM menu and press the key you want | |
+| **Off** | 4AM steps aside and Apple Mail's own shortcuts apply | |
+
+### The Gmail set
 
 | Key | Action | Key | Action |
 |---|---|---|---|
@@ -23,7 +35,15 @@
 | `F` | Forward | `O` or `↩` | Open message |
 | `C` | New message | `⌘↩` | Send (in a compose window) |
 
-They work in the message list and in a message opened in its own window. Every key can be changed or switched off.
+Single keys work in the message list and in a message opened in its own window. The 4AM menu lists every shortcut in the set you've chosen and shows where each one works.
+
+### Choosing your own keys
+
+Click **Edit Shortcuts…** in the 4AM menu, click an action and press the key you want. A few rules keep this safe:
+
+- Send, Copy, Paste and Cut work while you're typing, so they need `⌘`, `⌃` or `⌥` held down.
+- `⌘Q`, `⌘W`, `⌘H` and `⌘M` belong to macOS and can't be reassigned. Escape and Tab can't be shortcuts.
+- A key belongs to one action at a time. Giving it to another action moves it.
 
 ## Install
 
@@ -39,8 +59,8 @@ An app that listens for keys has to earn trust, so here is exactly what 4AM does
 
 - **It never records what you type.** Each key is checked against your shortcut list and forgotten. Nothing is logged or stored.
 - **It only looks at the keyboard while Mail is in front.** Switch to another app and it stops entirely.
-- **Typing is never touched.** Shortcuts fire only when a message or the message list is selected. Writing an email, searching and Spotlight work as normal.
-- **What happens while you write an email.** 4AM still sees each key press in a compose window, because that is the only way it can notice `⌘↩` to send. It compares the key with your shortcut list, finds no match and passes it to Mail unchanged. It keeps no copy: nothing you type is saved to memory, to disk or to a log, and nothing is sent anywhere.
+- **Typing is never touched.** Plain keys such as `E` fire only when a message or the message list is selected. In a message you're writing, only shortcuts held with `⌘`, `⌃` or `⌥` act (such as `⌘↩` to send, or `⌃C` in the Outlook for Windows set). Searching and Spotlight work as normal.
+- **What happens while you write an email.** 4AM still sees each key press in a compose window, because that is the only way it can notice a shortcut such as `⌘↩` to send. It compares the key with your shortcut list, finds no match and passes it to Mail unchanged. It keeps no copy: nothing you type is saved to memory, to disk or to a log, and nothing is sent anywhere.
 - **One network connection, when you ask.** 4AM contacts the internet only when you activate or deactivate a license key, sending that key and your Mac's name. Nothing about your mail is ever sent.
 
 ## What 4AM needs access to
@@ -63,7 +83,8 @@ An app that listens for keys has to earn trust, so here is exactly what 4AM does
 
 4AM keeps these on your Mac:
 
-- `~/Library/Application Support/4AM/keymap.json`: your shortcut settings.
+- `~/Library/Application Support/4AM/custom.json`: your Custom shortcut set, once you've made one.
+- `~/Library/Application Support/4AM/keymap.json`: advanced settings, such as the names of Mail's menu commands.
 - `~/Library/Preferences/com.caninodigital.4AM.plist`: whether shortcuts are switched on, and similar settings.
 - `~/Library/Logs/4AM/debug.log`: written only when you use the debugging tools.
 
@@ -73,7 +94,7 @@ The debugging tools appear when you hold Option and click the menu bar icon. The
 
 1. Quit 4AM and delete it from Applications.
 2. Remove it under System Settings › Privacy & Security (Accessibility, and Input Monitoring if listed) and under General › Login Items.
-3. Delete the three files listed above.
+3. Delete the files listed above.
 4. In the Keychain Access app, search for `com.caninodigital.4AM.license` and delete the entries. These hold your license key and trial date.
 
 ## Pricing
@@ -84,6 +105,12 @@ Free for 7 days with everything working. After that, a one-time purchase of USD$
 
 **Can Apple Mail use Gmail keyboard shortcuts?**
 Not by itself. 4AM adds them.
+
+**Can Apple Mail use Outlook keyboard shortcuts?**
+Not by itself. 4AM has an Outlook for Mac set and an Outlook for Windows set.
+
+**How do I use Ctrl+C and Ctrl+V in Apple Mail?**
+Choose 4AM's Outlook for Windows set. Control-C, Control-V and Control-X then copy, paste and cut in Mail. See the [guide](https://caninodigital.com/4am/ctrl-c-ctrl-v-in-apple-mail/).
 
 **How do I archive in Apple Mail with one key?**
 With 4AM, select a message and press `E`. Without it, Mail's archive shortcut is Control-Command-A.
@@ -103,6 +130,6 @@ With 4AM, select a message and press `E`. Without it, Mail's archive shortcut is
 
 This repository holds 4AM's documentation, release notes and issue tracker. 4AM is not open source and its source code is not published here.
 
-4AM is made by [Canino Digital](https://caninodigital.com/). It is an independent app and is not affiliated with or endorsed by Apple or Google. Apple Mail and macOS are trademarks of Apple Inc. Gmail is a trademark of Google LLC.
+4AM is made by [Canino Digital](https://caninodigital.com/). It is an independent app and is not affiliated with or endorsed by Apple, Google or Microsoft. Apple Mail and macOS are trademarks of Apple Inc. Gmail is a trademark of Google LLC. Outlook and Windows are trademarks of Microsoft Corporation.
 
 © 2026 John Canino. All rights reserved.
