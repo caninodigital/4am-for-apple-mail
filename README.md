@@ -126,6 +126,11 @@ With 4AM, select a message and press `E`. Without it, Mail's archive shortcut is
 - **Found a bug or have a request?** [Open an issue](../../issues).
 - **Anything else:** 4am@caninodigital.com
 
+## Legal
+
+- [4AM privacy policy](https://caninodigital.com/4am/privacy/)
+- [4AM license terms](https://caninodigital.com/4am/terms/)
+
 ## About this repository
 
 This repository holds 4AM's documentation, release notes and issue tracker. 4AM is not open source and its source code is not published here.
